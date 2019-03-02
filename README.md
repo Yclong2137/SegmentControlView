@@ -1,2 +1,2 @@
 # SegmentControlView
-分段控件简单定义
+Android分段控件简单定义
