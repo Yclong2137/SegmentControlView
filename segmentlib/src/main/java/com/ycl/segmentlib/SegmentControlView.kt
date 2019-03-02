@@ -5,13 +5,14 @@ import android.graphics.Color
 import android.graphics.Color.RED
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.StateListDrawable
-import android.support.v7.widget.AppCompatRadioButton
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import java.lang.IllegalArgumentException
 
+/**
+ * 分段控件
+ */
 class SegmentControlView : RadioGroup {
 
     private var mContext: Context? = null
@@ -150,38 +151,76 @@ class SegmentControlView : RadioGroup {
 
                 }
                 childCount - 1 -> {
-                    if (layoutParams is MarginLayoutParams) {
-                        layoutParams.bottomMargin = segmentStrokeWidth
-                        layoutParams.rightMargin = segmentStrokeWidth
-                        layoutParams.leftMargin = segmentStrokeWidth
+                    if (orientation == RadioGroup.HORIZONTAL) {
+                        if (layoutParams is MarginLayoutParams) {
+                            layoutParams.bottomMargin = segmentStrokeWidth
+                            layoutParams.topMargin = segmentStrokeWidth
+                            layoutParams.rightMargin = segmentStrokeWidth
+                        }
+                        segmentSelectedDrawable.cornerRadii = floatArrayOf(
+                            0f,
+                            0f,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            0f,
+                            0f
+                        )
+                        segmentSelectedDrawable.setColor(RED)
+                        segmentUnSelectedDrawable.cornerRadii = floatArrayOf(
+                            0f,
+                            0f,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            0f,
+                            0f
+                        )
+                        segmentUnSelectedDrawable.setColor(segmentUnSelectedStrokeColor)
+                    } else if (orientation == RadioGroup.VERTICAL) {
+                        if (layoutParams is MarginLayoutParams) {
+                            layoutParams.bottomMargin = segmentStrokeWidth
+                            layoutParams.rightMargin = segmentStrokeWidth
+                            layoutParams.leftMargin = segmentStrokeWidth
+                        }
+                        segmentSelectedDrawable.cornerRadii = floatArrayOf(
+                            0f,
+                            0f,
+                            0f,
+                            0f,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius
+                        )
+                        segmentSelectedDrawable.setColor(RED)
+                        segmentUnSelectedDrawable.cornerRadii = floatArrayOf(
+                            0f,
+                            0f,
+                            0f,
+                            0f,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius,
+                            segmentCornerRadius
+                        )
+                        segmentUnSelectedDrawable.setColor(segmentUnSelectedStrokeColor)
                     }
-                    segmentSelectedDrawable.cornerRadii = floatArrayOf(
-                        0f,
-                        0f,
-                        0f,
-                        0f,
-                        segmentCornerRadius,
-                        segmentCornerRadius,
-                        segmentCornerRadius,
-                        segmentCornerRadius
-                    )
-                    segmentSelectedDrawable.setColor(RED)
-                    segmentUnSelectedDrawable.cornerRadii = floatArrayOf(
-                        0f,
-                        0f,
-                        0f,
-                        0f,
-                        segmentCornerRadius,
-                        segmentCornerRadius,
-                        segmentCornerRadius,
-                        segmentCornerRadius
-                    )
-                    segmentUnSelectedDrawable.setColor(segmentUnSelectedStrokeColor)
+
                 }
                 else -> {
-                    if (layoutParams is MarginLayoutParams) {
-                        layoutParams.leftMargin = segmentStrokeWidth
-                        layoutParams.rightMargin = segmentStrokeWidth
+                    if (orientation == RadioGroup.HORIZONTAL) {
+                        if (layoutParams is MarginLayoutParams) {
+                            layoutParams.topMargin = segmentStrokeWidth
+                            layoutParams.bottomMargin = segmentStrokeWidth
+                        }
+                    } else if (orientation == RadioGroup.VERTICAL) {
+                        if (layoutParams is MarginLayoutParams) {
+                            layoutParams.leftMargin = segmentStrokeWidth
+                            layoutParams.rightMargin = segmentStrokeWidth
+                        }
                     }
                     segmentSelectedDrawable.setColor(RED)
                     segmentUnSelectedDrawable.setColor(segmentUnSelectedStrokeColor)
