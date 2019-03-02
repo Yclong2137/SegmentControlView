@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <com.ycl.segmentlib.SegmentControlView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+                android:text="手机QQ"
+                android:button="@null"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        <RadioButton
+                android:text="微信"
+                android:button="@null"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        <RadioButton
+                android:text="微博"
+                android:button="@null"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+    </com.ycl.segmentlib.SegmentControlView>
+
+</android.support.constraint.ConstraintLayout>

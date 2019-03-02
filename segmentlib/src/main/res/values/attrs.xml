@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SegmentControlView">
+        <attr name="segment_strokeWidth" format="integer"/>
+        <attr name="segment_selectedStrokeColor" format="color"/>
+        <attr name="segment_unSelectedStrokeColor" format="color"/>
+        <attr name="segment_cornerRadius" format="float"/>
+    </declare-styleable>
+</resources>
