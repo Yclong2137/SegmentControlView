@@ -2,8 +2,11 @@
 <resources>
     <declare-styleable name="SegmentControlView">
         <attr name="segment_strokeWidth" format="dimension"/>
-        <attr name="segment_selectedStrokeColor" format="color"/>
-        <attr name="segment_unSelectedStrokeColor" format="color"/>
+        <attr name="segment_strokeColor" format="color"/>
         <attr name="segment_cornerRadius" format="dimension"/>
+
+        <attr name="segment_tabSelectedColor" format="color"/>
+        <attr name="segment_tabColor" format="color"/>
+
     </declare-styleable>
 </resources>

@@ -14,8 +14,6 @@
             android:orientation="vertical"
             app:segment_cornerRadius="50dp"
             app:segment_strokeWidth="1dp"
-            app:segment_selectedStrokeColor="@color/colorAccent"
-            app:segment_unSelectedStrokeColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -37,6 +35,46 @@
                 android:layout_height="match_parent"/>
         <RadioButton
                 android:id="@+id/rb_wb"
+                android:text="微博"
+                android:button="@null"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+    </com.ycl.segmentlib.SegmentControlView>
+
+
+    <com.ycl.segmentlib.SegmentControlView
+            android:id="@+id/segmentx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:segment_cornerRadius="50dp"
+            app:segment_strokeColor="#f00"
+            app:segment_strokeWidth="1dp"
+            app:segment_tabColor="@color/colorPrimary"
+            app:segment_tabSelectedColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/segment">
+
+        <RadioButton
+                android:id="@+id/rb_qqx"
+                android:text="手机"
+                android:button="@null"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        <RadioButton
+                android:id="@+id/rb_wxx"
+                android:text="微信"
+                android:button="@null"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        <RadioButton
+                android:id="@+id/rb_wbx"
                 android:text="微博"
                 android:button="@null"
                 android:padding="8dp"
